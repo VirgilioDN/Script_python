@@ -2,8 +2,9 @@ from openpyxl import Workbook
 import pymupdf
 
 #converte o pdf para txt
-doc = pymupdf.open("dados inscritos.pdf") #colocar na pasta o pdf para ele encontrar 
-with open("output.txt", "wb") as out: #cria um txt para facilitar a extração
+doc = pymupdf.open("dados inscritos.pdf") #se o nome do pdf trocar coloque o novo nome aqui
+#cria um txt para facilitar a extração
+with open("output.txt", "wb") as out:
     for page in doc:
         text = page.get_text().encode("utf8")
         out.write(text)
